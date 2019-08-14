@@ -1,0 +1,40 @@
+
+* {
+
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.slick-prev:before, .slick-next:before {
+  content: none;
+}
+
+.popup-content {
+  background-color: transparent !important;
+  border: none !important;
+  padding: 0 !important;
+  position: static !important;
+}
+
+.skylight-overlay {
+  background-color: rgba(0, 0, 0, 0.24) !important;
+}
+
+.skylight-close-button {
+  display: none;
+}
+
+.skylight-dialog {
+  @extend .review-popup_content;
+}

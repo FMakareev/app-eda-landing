@@ -1,0 +1,195 @@
+
+.cooking-method {
+  &_wrapper {
+    position: relative;
+  }
+
+  &_title {
+    margin-bottom: 16px;
+  }
+
+  &_list {
+    padding-bottom: 1px;
+  }
+
+  &_more {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 125px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #FFFFFF 22.4%);
+    opacity: 0.5;
+  }
+
+  &_step {
+    margin-bottom: 35px;
+    max-width: 630px;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    flex-wrap: wrap;
+
+    @media(min-width: 768px) {
+      flex-wrap: nowrap;
+    }
+
+    &-preview-wrapper {
+      position: relative;
+      width: 100%;
+      margin-bottom: 32px;
+      @media(min-width: 768px) {
+        width: auto;
+        margin-right: 16px;
+        margin-bottom: 0;
+      }
+    }
+
+    &-preview {
+      position: relative;
+      width: 100%;
+      height: auto;
+      border-radius: 10px;
+      overflow: hidden;
+      padding-top: 35.714285714285715%; // 280X100
+      @media(min-width: 768px) {
+        padding-top: 0;
+        width: 165px;
+        height: 165px;
+      }
+    }
+
+    &-preview-img {
+      display: block;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    &-count {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      background-color: #EE2529;
+      color: #ffffff;
+      text-align: center;
+      line-height: 28px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    &-content {
+      font-family: "Rubik", sans-serif;
+      font-style: normal;
+      font-weight: normal;
+      font-size: 16px;
+      line-height: 30px;
+
+      color: #000000;
+    }
+  }
+}
+
+.cooking-method-full {
+  &_wrapper {
+    position: relative;
+    overflow: hidden;
+    background-color: #FA7109;
+    border-radius: 20px;
+    padding: 32px 16px;
+    margin-bottom: 80px;
+    box-shadow: 0 0 50px #F47B20, 0px -100px 100px #FFFFFF;
+    @media (min-width: 768px) {
+      padding: 70px 70px;
+      box-shadow: none;
+    }
+
+    @media (min-width: 992px) {
+      background-repeat: no-repeat;
+      background-position-x: 105%;
+      background-image: url('../../../static/images/cooking-method-full-bg.jpg');
+    }
+
+  }
+
+  &_content {
+    max-width: 600px;
+  }
+
+  &_title {
+    font-family: "EDA TV";
+    color: #FFFFFF;
+    margin-bottom: 24px;
+    display: none;
+
+    @media (min-width: 768px) {
+      margin-bottom: 40px;
+      display: block;
+      font-size: 44px;
+      line-height: 64px;
+    }
+
+    &--mobile {
+      display: block;
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+
+  }
+
+  &_btn-group {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    button {
+      margin-bottom: 24px;
+      @media (min-width: 768px) {
+        margin-bottom: 30px;
+      }
+    }
+
+    button:first-child {
+      margin-right: 12px;
+      @media (min-width: 768px) {
+        margin-right: 35px;
+      }
+    }
+  }
+
+  &_website {
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    color: #FFFFFF;
+    font-size: 18px;
+    line-height: 120%;
+    display: none;
+    @media (min-width: 768px) {
+      display: block;
+      font-size: 20px;
+      line-height: 38px;
+    }
+
+    &--mobile {
+      display: block;
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+
+    &-link {
+      font-size: 20px;
+      line-height: 38px;
+    }
+
+  }
+
+
+}

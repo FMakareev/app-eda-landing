@@ -1,0 +1,144 @@
+@import "utils/normalize";
+@import "utils/reset";
+
+
+* {
+  box-sizing: border-box;
+  outline: none;
+}
+
+@font-face {
+  font-family: "EDA TV";
+  src: url("../../static/fonts/edatv-bold.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Rubik", sans-serif;
+  src: url("../../static/fonts/Rubik-Regular.ttf") format("opentype");
+}
+
+@font-face {
+  font-family: "Rubik-Medium", sans-serif;
+  src: url("../../static/fonts/Rubik-Medium.ttf") format("opentype");
+}
+
+body, html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: "Rubik", sans-serif;
+}
+
+
+.container {
+  max-width: 1010px;
+  width: 100%;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.f-grid {
+  @media(min-width: 768px) {
+    display: flex;
+    justify-content: space-between;
+    flex-flow: row wrap;
+  }
+}
+
+.f-grid-cell {
+  position: relative;
+  overflow: hidden;
+
+}
+
+.title {
+  &_h1, h1 {
+    font-family: "EDA TV";
+    color: #000000;
+    font-size: 32px;
+    line-height: 39px;
+    @media(min-width: 768px) {
+      font-size: 64px;
+      line-height: 77px;
+    }
+  }
+
+  &_h2 {
+    font-family: "EDA TV";
+    color: #000000;
+
+    font-size: 24px;
+    line-height: 29px;
+
+    @media(min-width: 768px) {
+      font-size: 40px;
+      line-height: 48px;
+    }
+
+
+  }
+
+  &_h3, h3 {
+    font-family: EDA TV;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+
+    @media(min-width: 768px) {
+      font-size: 32px;
+      line-height: 39px;
+    }
+  }
+
+  &_h5 {
+    font-family: EDA TV;
+    font-size: 20px;
+    line-height: 24px;
+    color: #000000;
+
+
+  }
+
+  &_h6 {
+    font-family: EDA TV;
+    font-size: 16px;
+    line-height: 19px;
+    /* identical to box height */
+
+    color: #000000;
+  }
+}
+
+.text,p {
+  font-family: "Rubik", sans-serif;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 16px;
+  line-height: 30px;
+
+  color: #000000;
+}
+
+.app-wrapper {
+  position: relative;
+  overflow: hidden;
+
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: -1;
+    height: 1670px;
+    background: linear-gradient(180deg, rgba(249, 249, 249, 0) 0%, #F9F9F9 100%);
+  }
+}
+
+@import "components/header";
+@import "components/footer";
+@import "components/recipe";
+@import "components/button";
+@import "components/cooking-method";
+@import "components/features";
+@import "components/reviews";

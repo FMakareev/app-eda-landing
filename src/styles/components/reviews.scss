@@ -1,0 +1,256 @@
+
+.review {
+  &_wrapper {
+    position: relative;
+    margin-bottom: 25px;
+    overflow: hidden;
+    width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+    height: 316px;
+    @media(min-width: 768px) {
+      height: 255px;
+    }
+
+    @media(min-width: 1024px) {
+      padding: 0;
+      &:after {
+        content: '';
+        position: absolute;
+        right: 0;
+        top: 0;
+        height: 255px;
+        width: calc((100% - 970px) / 1.5);;
+        background: linear-gradient(274.68deg, #FBFBFB 2.73%, rgba(251, 251, 251, 0.33) 100.23%);
+      }
+
+      &:before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 10;
+        height: 255px;
+        width: calc((100% - 970px) / 2);
+        background-color: #F9F9F9;
+      }
+    }
+
+  }
+
+  &_container {
+    max-width: 970px;
+    margin-right: auto;
+    margin-left: auto;
+
+    .slick-list {
+      overflow: inherit;
+      height: 316px;
+      @media(min-width: 768px) {
+        height: 255px;
+      }
+    }
+
+    .slick-slider {
+      height: 316px;
+      @media(min-width: 768px) {
+        height: 255px;
+      }
+    }
+
+    .button_slider-arrow {
+      z-index: 10;
+    }
+
+  }
+}
+
+.review-slider {
+  &_item {
+    padding-right: 20px;
+    @media(min-width: 768px) {
+      width: 410px !important;
+    }
+  }
+
+  &_arrow {
+
+    &--right {
+
+    }
+
+  }
+
+}
+
+
+.review-card {
+  &_wrapper {
+    background-color: #fff;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02);
+    border-radius: 10px;
+    padding: 30px 16px;
+    overflow: hidden;
+    max-width: 280px;
+    width: 100%;
+
+    @media(min-width: 768px) {
+      max-width: 390px;
+      padding: 30px 20px;
+
+    }
+
+  }
+
+  &_top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 12px;
+    flex-wrap: wrap;
+
+    @media(min-width: 768px) {
+      flex-wrap: nowrap;
+    }
+
+  }
+
+  &_name {
+    width: 100%;
+    margin-bottom: 16px;
+    @media(min-width: 768px) {
+      width: calc(100% - 130px);
+      margin: 0;
+    }
+  }
+
+  &_rating {
+    width: 100px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    @media(min-width: 768px) {
+
+    }
+  }
+
+  &_rating-star {
+    display: block;
+    width: 19px;
+    height: 19px;
+    margin: 0 1px;
+  }
+
+  &_content {
+    position: relative;
+    max-width: 310px;
+    min-height: 130px;
+    margin-bottom: 12px;
+    font-family: "Rubik", sans-serif;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 26px;
+    color: #000000;
+  }
+
+  &_more-btn {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 60px;
+    background: linear-gradient(270deg, #FFFFFF 73.05%, rgba(255, 255, 255, 0.8) 100%);
+    color: #FA7109;
+    font-family: 'Rubik-Medium', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 160%;
+  }
+
+  &_bottom {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+  }
+
+  &_platform-icon {
+    margin-right: 12px;
+    width: 18px;
+  }
+
+  &_platform-icon-image {
+    display: block;
+    width: 100%;
+  }
+
+  &_store-link {
+    font-size: 14px;
+    line-height: 160%;
+    @media(min-width: 768px) {
+      font-size: 16px;
+      line-height: 160%;
+    }
+  }
+
+}
+
+
+.review-popup {
+
+  &_close-btn {
+    position: fixed;
+    width: 24px;
+    height: 24px;
+    top: 20px;
+    right: 20px;
+    z-index: 100;
+    transition: .225s all;
+    padding: 0;
+
+    &--hidden {
+      opacity: 0;
+      z-index: -1;
+    }
+
+    @media(min-width: 768px) {
+      top: 40px;
+      right: 80px;
+    }
+  }
+
+
+  &_content {
+    background: #FFFFFF;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.02) !important;
+    border-radius: 10px !important;
+    min-width: calc(100% - 40px);
+    padding: 30px 20px !important;
+    max-height: calc(100vh - 84px);
+
+    top: 64px !important;
+    left: 0 !important;
+    right: 0 !important;
+    margin: 0 auto !important;
+
+    @media(min-width: 768px) {
+      top: 200px !important;
+      min-width: 650px;
+      max-height: calc(100vh - 300px);
+    }
+  }
+
+  &_top {
+    @extend .review-card_top;
+    margin-bottom: 16px;
+  }
+
+  &_comment {
+    @extend .review-card_content;
+    width: 100%;
+    max-width: 100%;
+  }
+
+
+}

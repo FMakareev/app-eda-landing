@@ -1,0 +1,47 @@
+
+.header {
+  position: relative;
+  &_left-bg {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    transform: translateY(-50%);
+    left: 0;
+    margin: 0;
+    width: calc((100% - 970px ) / 2);
+  }
+
+  &_right-bg {
+    position: absolute;
+    z-index: -1;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 0;
+    margin: 0;
+    width: calc((100% - 970px ) / 2);
+  }
+
+
+
+  &_top {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 20px;
+    padding-top: 20px;
+  }
+
+  &_logo {
+
+  }
+
+  &_logo-img {
+  }
+
+  &_title {
+    margin-bottom: 60px;
+    margin-top: 40px;
+  }
+
+}
