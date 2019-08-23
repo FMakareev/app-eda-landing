@@ -5,42 +5,38 @@ import IconTwitter from "../../images/icon-twitter.svg"
 import IconLinkedin from "../../images/icon-linkedin.svg"
 import IconInstagram from "../../images/icon-instagram.svg"
 import IconYoutube from "../../images/icon-youtube.svg"
-import IOSBtn from "../../images/ios-btn.svg"
-import GooglePlayBtn from "../../images/google-play-btn.svg"
+
 import Logo from '../../images/logo-monocolor.svg'
+import StoreButtonGroup from "../storeButtonGroup"
+import Config from "../../config"
 
 export const Footer = () => (<footer className={"footer"}>
   <Container className={'footer_container'}>
     <div className="footer_left">
       <div className="footer_logo">
-        <img src={Logo} alt="" className="footer_logo-img"/>
+        <img src={Logo} alt="logo" className="footer_logo-img"/>
       </div>
-
-      <div className="footer_store-btn-group">
-        <button className={"button_primary button_primary--medium"}>
-          <img className={"button_primary-img "} src={IOSBtn} alt=""/>
-        </button>
-        <button className={"button_primary button_primary--medium"}>
-          <img className={"button_primary-img "} src={GooglePlayBtn} alt=""/>
-        </button>
-      </div>
+      <StoreButtonGroup
+        className={"footer_store-btn-group"}
+        buttonClassNames={'button_primary--medium'}
+      />
     </div>
 
 
     <div className="footer_social-group">
-      <a href={""} className="button_primary button_primary--medium">
+      <a rel="noopener" aria-label="ссылка на facebook" href={Config.socialLinks.facebook} className="button_primary button_primary--medium">
         <img src={IconFacebook} alt=""/>
       </a>
-      <a href={""} className="button_primary button_primary--medium">
+      <a rel="noopener" aria-label="ссылка на twitter" href={Config.socialLinks.twitter} className="button_primary button_primary--medium">
         <img src={IconTwitter} alt=""/>
       </a>
-      <a href={""} className="button_primary button_primary--medium">
+      <a rel="noopener" aria-label="ссылка на linkedin" href={Config.socialLinks.linkedin} className="button_primary button_primary--medium">
         <img src={IconLinkedin} alt=""/>
       </a>
-      <a href={""} className="button_primary button_primary--medium">
+      <a rel="noopener" aria-label="ссылка на instagram" href={Config.socialLinks.instagram} className="button_primary button_primary--medium">
         <img src={IconInstagram} alt=""/>
       </a>
-      <a href={""} className="button_primary button_primary--medium">
+      <a rel="noopener" aria-label="ссылка на youtube" href={Config.socialLinks.youtube} className="button_primary button_primary--medium">
         <img src={IconYoutube} alt=""/>
       </a>
     </div>

@@ -46,7 +46,9 @@
     }
 
     .button_primary {
-      margin-right: 12px;
+      @media(min-width: 768px) {
+        margin-right: 12px;
+      }
 
       &:last-child {
         margin: 0;

@@ -1,9 +1,11 @@
-import React, { Fragment } from "react"
+import React from "react"
 import IconIOS from "../../images/icon-apple.svg"
 import IconAndroid from "../../images/icon-android.svg"
 import ReviewRating from "./review-rating"
-import ReviewPopup from "./review-popup"
 
+const DeviceDetected = typeof window === "object" ? require("current-device").default : null
+const maxLength = DeviceDetected && DeviceDetected.desktop() ? 170 : 140;
+// const maxLength =  140;
 
 export const ReviewCard = ({
                              author,
@@ -20,9 +22,9 @@ export const ReviewCard = ({
     <ReviewRating count={rating}/>
   </div>
   <div className="review-card_content">
-    {comment && comment.substr(0, 170)}
+    {comment && comment.substr(0, maxLength)}
     {
-      comment && comment.length > 170 && (<button onClick={() => onClick({
+      comment && comment.length > maxLength && (<button onClick={() => onClick({
         modalOpen: true,
         review: {
           author,

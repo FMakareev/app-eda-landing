@@ -1,6 +1,7 @@
 
 .header {
   position: relative;
+
   &_left-bg {
     position: absolute;
     z-index: -1;
@@ -8,7 +9,11 @@
     transform: translateY(-50%);
     left: 0;
     margin: 0;
-    width: calc((100% - 970px ) / 2);
+    width: calc((100% - 970px) / 2);
+    display: none;
+    @media(min-width: 768px) {
+      display: block;
+    }
   }
 
   &_right-bg {
@@ -18,10 +23,26 @@
     transform: translateY(-50%);
     right: 0;
     margin: 0;
-    width: calc((100% - 970px ) / 2);
+    width: calc((100% - 970px) / 2);
+    display: none;
+    @media(min-width: 768px) {
+      display: block;
+    }
   }
 
+  &_btn-group {
+    display: flex;
+    flex-direction: row;
+    .button_primary {
+      @media(min-width: 768px) {
+        margin-right: 20px;
+      }
 
+      &:last-child {
+        margin: 0;
+      }
+    }
+  }
 
   &_top {
     display: flex;

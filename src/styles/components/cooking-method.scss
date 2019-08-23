@@ -94,9 +94,32 @@
       color: #000000;
     }
   }
+
+  &_right-bg {
+    position: absolute;
+    z-index: -1;
+    top: 70%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    right: 0;
+    margin: 0;
+    width: calc((100% - 970px ) / 2);
+  }
+
+  &_left-bg {
+    position: absolute;
+    z-index: -1;
+    bottom: 120px;
+    left: -160px;
+  }
 }
 
 .cooking-method-full {
+
+  &_container{
+    position: relative;
+  }
+
   &_wrapper {
     position: relative;
     overflow: hidden;
@@ -148,14 +171,14 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    button {
+    .button_primary {
       margin-bottom: 24px;
       @media (min-width: 768px) {
         margin-bottom: 30px;
       }
     }
 
-    button:first-child {
+    .button_primary:first-child {
       margin-right: 12px;
       @media (min-width: 768px) {
         margin-right: 35px;

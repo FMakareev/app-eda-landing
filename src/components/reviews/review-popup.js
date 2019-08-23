@@ -28,7 +28,7 @@ try{
 
   return (
     <Fragment>
-      <button onClick={onClose} className={classNames("button review-popup_close-btn", {
+      <button aria-label="закрыть" onClick={onClose} className={classNames("button review-popup_close-btn", {
         "review-popup_close-btn--hidden": !open,
       })}>
         <img src={IconClose} alt=""/>

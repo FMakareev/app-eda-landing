@@ -1,19 +1,21 @@
 import React from "react"
 import { asyncComponent } from 'react-async-component';
 import Slider from "react-slick"
+import { Parallax } from "react-scroll-parallax"
 
 import ReviewCard from "./review-card"
 import Button from "../button"
 import ReviewList from "../../mockup/review"
-
+import Green from '../../../static/images/3-green.png';
+import tomato from '../../../static/images/3-tomato-img.jpg';
 
 const CarouselConfig = {
   dots: false,
   variableWidth: true,
   infinite: true,
   speed: 500,
-  nextArrow: <Button mods={"slider--right"} variant={"slider"}/>,
-  prevArrow: <Button mods={"slider--left"} variant={"slider"}/>,
+  nextArrow: <Button aria-label="следующее превью" mods={"slider--right"} variant={"slider"}/>,
+  prevArrow: <Button aria-label="предыдущее превью" mods={"slider--left"} variant={"slider"}/>,
   responsive:[
     {
       breakpoint: 1010,
@@ -43,7 +45,6 @@ const CarouselConfig = {
   ]
 }
 
-// const ReviewPopup = React.lazy(() => import('./review-popup'));
 const ReviewPopup = asyncComponent({
   resolve: () => import('./review-popup'),
   ErrorComponent: ({ error }) => {
@@ -62,6 +63,9 @@ export const Reviews = () => {
 
   return (<div>
     <div className={"review_wrapper"}>
+      <Parallax className={'review_right-bg'} y={[-45, 120]}>
+        <img src={Green} alt="зелень"/>
+      </Parallax>
       <div className="review_container">
         <Slider
           {...CarouselConfig}
@@ -78,6 +82,9 @@ export const Reviews = () => {
           }
         </Slider>
       </div>
+      <Parallax className={'review_left-bg'} y={[-15, 25]}>
+        <img src={tomato} alt="tomato"/>
+      </Parallax>
     </div>
     <ReviewPopup
       open={state.modalOpen}

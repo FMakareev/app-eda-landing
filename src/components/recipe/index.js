@@ -1,25 +1,25 @@
 import React from "react"
+import { Parallax } from "react-scroll-parallax"
 import RecipeHeader from "./recipe-header"
 import RecipeBody from "./recipe-body"
 import Container from "../container"
-import RecipeLeft from '../../../static/images/recipe-left-img.jpg';
-import RecipeRight from '../../../static/images/recipe-right-img.jpg';
-import { Parallax } from "react-scroll-parallax"
-import tomato from "../../../static/images/1-tomato-img.jpg"
+import RecipeLeft from "../../../static/images/recipe-left-img.jpg"
+import RecipeRight from "../../../static/images/recipe-right-img.jpg"
 
 export const Recipe = () => (<div className="recipe_wrapper">
 
-  <Container className={'recipe_container'}>
+  <Container className={"recipe_container"}>
     <RecipeHeader/>
 
-    <Parallax className="recipe_right-bg" y={[-80, 20]} x={["50%", 0]} tagOuter="figure">
-      <img src={tomato} alt={"перец"}/>
-    </Parallax>
   </Container>
-  <Container className={'recipe_wrapper-body'}>
-    <img src={RecipeLeft} className={'recipe_body-left-bg'} alt=""/>
+  <Container className={"recipe_wrapper-body"}>
+    <Parallax className={"recipe_body-left-bg"} y={[-25, 15]} tagOuter="figure">
+      <img src={RecipeLeft} alt=""/>
+    </Parallax>
     <RecipeBody/>
-    <img src={RecipeRight} className={'recipe_body-right-bg'} alt=""/>
+    <Parallax className='recipe_body-right-bg' y={[15, -35]} tagOuter="figure">
+      <img src={RecipeRight} alt=""/>
+    </Parallax>
   </Container>
 </div>)
 
