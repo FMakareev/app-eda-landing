@@ -25,6 +25,6 @@ module.exports = {
         lang: 'ru'
       }
     },
-    `gatsby-plugin-preact`
+    `gatsby-plugin-preact`,
   ],
 }
