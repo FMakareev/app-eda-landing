@@ -1,36 +1,49 @@
 import React from "react"
 
-export const RecipeIngredients = () => (
-  <div className="recipe_ingredients f-grid-cell">
-    <h3 className="recipe_ingredients-title title_h3">
-      Ингредиенты
-    </h3>
-    <ul className="recipe_ingredients-list">
-      <li className="recipe_ingredients-item">
-        чеснок — 2 зубчик
-      </li>
-      <li className="recipe_ingredients-item">
-        масло оливковое
-      </li>
-      <li className="recipe_ingredients-item">
-        лук репчатый — 1 шт.
-      </li>
-      <li className="recipe_ingredients-item">
-        помидоры в собственном соку — 250 г
-      </li>
-      <li className="recipe_ingredients-item">
-        базилик
-      </li>
-      <li className="recipe_ingredients-item">
-        черный перец
-      </li>
-      <li className="recipe_ingredients-item">
-        тальятелле — 150 г
-      </li>
-      <li className="recipe_ingredients-item recipe_ingredients-item--more">
-        И еще 8 ингредиентов
-      </li>
-    </ul>
-  </div>)
 
-export default RecipeIngredients;
+const RecipeIngredientsItem = (value) => {
+
+  return (<li className="recipe_ingredients-item">
+    {value.name} — {value.quantity}
+  </li>)
+}
+
+
+export const RecipeIngredients = ({ ingredients }) => {
+
+  return (
+    <div className="recipe_ingredients f-grid-cell">
+      <h3 className="recipe_ingredients-title title_h3">
+        Ингредиенты
+      </h3>
+      <ul className="recipe_ingredients-list">
+        {
+          ingredients &&
+          Object.entries(ingredients)
+            .slice(0, 9)
+            .map(
+              ([key, value], index) => (<RecipeIngredientsItem
+                key={index}
+                {...value}
+              />),
+            )
+        }
+
+        {
+          !!(ingredients && Object.entries(ingredients).length > 9) &&
+          <li>
+            <a className="recipe_ingredients-item recipe_ingredients-item--more"
+               rel="noopener"
+               aria-label={"рецепты на сайте"}
+               target={"_blank"}
+               href="https://www.tveda.ru/recepty/"
+            >
+              И еще {Object.entries(ingredients).slice(9).length} ингредиентов
+            </a>
+          </li>
+        }
+      </ul>
+    </div>)
+}
+
+export default RecipeIngredients

@@ -2,10 +2,10 @@ import React from "react"
 import IconIOS from "../../images/icon-apple.svg"
 import IconAndroid from "../../images/icon-android.svg"
 import ReviewRating from "./review-rating"
+import Config from "../../config"
 
 const DeviceDetected = typeof window === "object" ? require("current-device").default : null
-const maxLength = DeviceDetected && DeviceDetected.desktop() ? 170 : 140;
-// const maxLength =  140;
+const maxLength = DeviceDetected && DeviceDetected.desktop() ? 170 : 140
 
 export const ReviewCard = ({
                              author,
@@ -47,7 +47,13 @@ export const ReviewCard = ({
         <img src={IconIOS} className="review-card_platform-icon-image" alt=""/>
       }
     </div>
-    <a href={storeLink} className="button_link review-card_store-link">
+    <a
+      target={"_blank"}
+      rel="noopener"
+      aria-label={`ссылка на ${platform} приложение`}
+      href={platform === "android" ? Config.storeLink.android : Config.storeLink.ios}
+      className="button_link review-card_store-link"
+    >
       Открыть в магазине приложений
     </a>
   </div>

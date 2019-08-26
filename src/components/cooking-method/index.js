@@ -4,8 +4,8 @@ import CookingMethodFull from "./cooking-method-full"
 import { Parallax } from "react-scroll-parallax"
 import tomato from "../../../static/images/1-tomato-img.jpg"
 
-export const CookingMethod = () => {
-  return (<div >
+export const CookingMethod = ({ recipeData }) => {
+  return (<div>
     <div className="cooking-method_wrapper">
       <h2 className="title_h2 cooking-method_title">
         Способ приготовления
@@ -15,13 +15,17 @@ export const CookingMethod = () => {
         <img src={tomato} alt={"перец"}/>
       </Parallax>
       <ul className="cooking-method_list">
-        <CookingMethodStep/>
+        {
+          recipeData && recipeData.cooking_process.slice(0,1).map((step, index) => (
+            <CookingMethodStep key={index} index={index + 1} {...step}/>
+          ))
+        }
       </ul>
       <div className="cooking-method_more">
 
       </div>
     </div>
-    <CookingMethodFull/>
+    <CookingMethodFull recipeData={recipeData}/>
   </div>)
 }
 

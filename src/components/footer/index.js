@@ -24,19 +24,19 @@ export const Footer = () => (<footer className={"footer"}>
 
 
     <div className="footer_social-group">
-      <a rel="noopener" aria-label="ссылка на facebook" href={Config.socialLinks.facebook} className="button_primary button_primary--medium">
+      <a target={'_blank'} rel="noopener" aria-label="ссылка на facebook" href={Config.socialLinks.facebook} className="button_primary button_primary--medium">
         <img src={IconFacebook} alt=""/>
       </a>
-      <a rel="noopener" aria-label="ссылка на twitter" href={Config.socialLinks.twitter} className="button_primary button_primary--medium">
+      <a target={'_blank'} rel="noopener" aria-label="ссылка на twitter" href={Config.socialLinks.twitter} className="button_primary button_primary--medium">
         <img src={IconTwitter} alt=""/>
       </a>
-      <a rel="noopener" aria-label="ссылка на linkedin" href={Config.socialLinks.linkedin} className="button_primary button_primary--medium">
+      <a target={'_blank'} rel="noopener" aria-label="ссылка на linkedin" href={Config.socialLinks.linkedin} className="button_primary button_primary--medium">
         <img src={IconLinkedin} alt=""/>
       </a>
-      <a rel="noopener" aria-label="ссылка на instagram" href={Config.socialLinks.instagram} className="button_primary button_primary--medium">
+      <a target={'_blank'} rel="noopener" aria-label="ссылка на instagram" href={Config.socialLinks.instagram} className="button_primary button_primary--medium">
         <img src={IconInstagram} alt=""/>
       </a>
-      <a rel="noopener" aria-label="ссылка на youtube" href={Config.socialLinks.youtube} className="button_primary button_primary--medium">
+      <a target={'_blank'} rel="noopener" aria-label="ссылка на youtube" href={Config.socialLinks.youtube} className="button_primary button_primary--medium">
         <img src={IconYoutube} alt=""/>
       </a>
     </div>

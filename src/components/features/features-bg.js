@@ -1,7 +1,7 @@
 import React, {Fragment} from "react"
 import { Parallax } from "react-scroll-parallax"
 
-import PepperImg from "../../../static/images/1-pepper-img.jpg"
+import PepperImg from "../../../static/images/1-pepper-img.png"
 import GreenOneImg from "../../../static/images/1-green.jpg"
 import GreenTwoImg from "../../../static/images/2-green.jpg"
 import TomatoTwoImg from "../../../static/images/2-tomato-img.jpg"
