@@ -8017,11 +8017,6 @@ prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.6.1, prop-types@^15.6.2,
     object-assign "^4.1.1"
     react-is "^16.8.1"
 
-proptypes@^1.1.0:
-  version "1.1.0"
-  resolved "https://registry.yarnpkg.com/proptypes/-/proptypes-1.1.0.tgz#78b3828a5aa6bb1308939e0de3c6044dfd4bd239"
-  integrity sha1-eLOCilqmuxMIk54N48YETf1L0jk=
-
 protocols@^1.1.0, protocols@^1.4.0:
   version "1.4.7"
   resolved "https://registry.yarnpkg.com/protocols/-/protocols-1.4.7.tgz#95f788a4f0e979b291ffefcf5636ad113d037d32"
@@ -10047,6 +10042,11 @@ url@^0.11.0:
   dependencies:
     punycode "1.3.2"
     querystring "0.2.0"
+
+use-axios-request@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/use-axios-request/-/use-axios-request-0.2.0.tgz#c692b27688aa6560b23c4881a9bbb3b40d9d2451"
+  integrity sha512-0e1dCUGHFnK2hquM9D21vp+7+MNjIddQLM7mQtfK5kWiPTJ8lCiLu6FByv2OBCiPDCstCCUsn6AbskwITsxIMA==
 
 use@^3.1.0:
   version "3.1.1"
