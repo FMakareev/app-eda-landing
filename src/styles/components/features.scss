@@ -18,11 +18,18 @@
     }
 
     &--left {
-      left: 0;
+      left: -16px;
+
+      @media (min-width: 768px) {
+        left: 0;
+      }
     }
 
     &--right {
-      right: 0;
+      right: -16px;
+      @media (min-width: 768px) {
+        right: 0;
+      }
     }
   }
 

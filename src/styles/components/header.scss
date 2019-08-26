@@ -11,6 +11,11 @@
     margin: 0;
     width: calc((100% - 970px) / 2);
     display: none;
+
+    img {
+      display: block;
+      margin: 0 auto;
+    }
     @media(min-width: 768px) {
       display: block;
     }
