@@ -228,10 +228,11 @@
     transform: translate(-50%, -50%);
     display: block;
     object-fit: contain;
-    width: 120%;
+    width: 100%;
 
-    @media(min-width: 900px) {
-      width: 100%;
+    @media(min-width: 768px) {
+      width: auto;
+      height: 100%;
     }
   }
 
