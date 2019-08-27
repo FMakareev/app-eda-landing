@@ -13,9 +13,9 @@ import Config from "../../config"
 export const Footer = () => (<footer className={"footer"}>
   <Container className={'footer_container'}>
     <div className="footer_left">
-      <div className="footer_logo">
+      <a href={'https://www.tveda.ru/'} className="footer_logo">
         <img src={Logo} alt="logo" className="footer_logo-img"/>
-      </div>
+      </a>
       <StoreButtonGroup
         className={"footer_store-btn-group"}
         buttonClassNames={'button_primary--medium'}
