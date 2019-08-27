@@ -204,7 +204,7 @@
     left: 55%;
     transform: translate(-50%, -50%);
     display: none;
-
+    z-index: -1;
     img {
       display: block;
       max-width: 190px;
@@ -220,6 +220,7 @@
     bottom: 200px;
     right: 0;
     display: none;
+    z-index: -1;
 
     img {
       display: block;

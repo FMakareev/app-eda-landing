@@ -1,10 +1,47 @@
 import React from "react"
 
 
+const getUnitName = (unit) => {
+  switch (unit) {
+    case('300'):{
+      return 'шт';
+    }
+    case("299"):{
+      return 'ч. л.';
+    }
+    case("298"):{
+      return 'ст. л';
+    }
+    case("294"):{
+      return 'по вкусу';
+    }
+    case("292"):{
+      return 'мл';
+    }
+    case("288"):{
+      return 'зубчика';
+    }
+    case("287"):{
+      return 'г';
+    }
+    default:{
+      return '';
+    }
+  }
+}
+
+const GetQuantity = (quantity) =>{
+  if(quantity > 0){
+    return `- ${quantity}`
+  }
+  return ''
+}
+
+
 const RecipeIngredientsItem = (value) => {
 
   return (<li className="recipe_ingredients-item">
-    {value.name} — {value.quantity}
+    {value.name} {GetQuantity(value.quantity)} {getUnitName(value.unit)}
   </li>)
 }
 

@@ -63,7 +63,7 @@ export const Reviews = () => {
 
   return (<div>
     <div className={"review_wrapper"}>
-      <Parallax className={'review_right-bg'} y={[-45, 120]}>
+      <Parallax className={'review_right-bg'} y={[-45,45]}>
         <img src={Green} alt="зелень"/>
       </Parallax>
       <div className="review_container">
