@@ -13,9 +13,9 @@ export const Header = () => (<header className={"header"}>
       <img src={tomato} alt={"томат"}/>
     </Parallax>
     <div className="header_top">
-      <div className="header_logo">
+      <a href={'https://www.tveda.ru/'} className="header_logo">
         <img src={Logo} alt="" className="header_logo-img"/>
-      </div>
+      </a>
 
       <StoreButtonGroup
         className={'header_btn-group'}
