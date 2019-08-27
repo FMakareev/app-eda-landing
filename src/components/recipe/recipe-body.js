@@ -14,7 +14,11 @@ const RecipeBody = ({ recipeData }) => (
     >
       <img
         className="recipe_preview-img"
-        src={recipeData && recipeData.recipe && recipeData.recipe.image}
+        // src={recipeData && recipeData.recipe && recipeData.recipe.image}
+        src={recipeData &&
+        Array.isArray(recipeData.cooking_process) &&
+        recipeData.cooking_process[recipeData.cooking_process.length - 1].image
+        }
         alt=""
       />
       <button aria-label="открыть рецепт" className="recipe_preview-link">
