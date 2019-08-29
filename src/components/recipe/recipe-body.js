@@ -16,8 +16,6 @@ const CreateLink = (recipeData) => {
 const RecipeBody = ({ recipeData }) => {
   const [playVideo, toggleVideo] = React.useState(false)
 
-  console.log("RecipeBody playVideo: ", playVideo)
-  console.log("RecipeBody recipeData: ", recipeData)
   useEffect(() => {
     toggleVideo(false)
   }, [recipeData])
