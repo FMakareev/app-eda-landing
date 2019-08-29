@@ -13,7 +13,7 @@ export const Header = () => (<header className={"header"}>
       <img src={tomato} alt={"томат"}/>
     </Parallax>
     <div className="header_top">
-      <a href={'https://www.tveda.ru/'} className="header_logo">
+      <a target={'_blank'} rel="noopener" href={'https://www.tveda.ru/'} className="header_logo">
         <img src={Logo} alt="" className="header_logo-img"/>
       </a>
 
@@ -23,7 +23,7 @@ export const Header = () => (<header className={"header"}>
       />
     </div>
     <h1 className={"title_h1 header_title"}>
-      Мобильное приложение телеканала Еда
+      Мобильное приложение телеканала "Еда"
     </h1>
   </Container>
 

@@ -1,40 +1,40 @@
-import React from "react"
+import React, { useEffect } from "react"
 
 
 const getUnitName = (unit) => {
   switch (unit) {
-    case('300'):{
-      return 'шт';
+    case("300"): {
+      return "шт"
     }
-    case("299"):{
-      return 'ч. л.';
+    case("299"): {
+      return "ч. л."
     }
-    case("298"):{
-      return 'ст. л';
+    case("298"): {
+      return "ст. л"
     }
-    case("294"):{
-      return 'по вкусу';
+    case("294"): {
+      return "по вкусу"
     }
-    case("292"):{
-      return 'мл';
+    case("292"): {
+      return "мл"
     }
-    case("288"):{
-      return 'зубчика';
+    case("288"): {
+      return "зубчика"
     }
-    case("287"):{
-      return 'г';
+    case("287"): {
+      return "г"
     }
-    default:{
-      return '';
+    default: {
+      return ""
     }
   }
 }
 
-const GetQuantity = (quantity) =>{
-  if(quantity > 0){
+const GetQuantity = (quantity) => {
+  if (quantity > 0) {
     return `- ${quantity}`
   }
-  return ''
+  return ""
 }
 
 
@@ -46,7 +46,26 @@ const RecipeIngredientsItem = (value) => {
 }
 
 
-export const RecipeIngredients = ({ ingredients }) => {
+const sliceIngredients = (ingredients, isSlice) => {
+  if (ingredients !== null) {
+    if (isSlice) {
+      return Object.entries(ingredients)
+        .slice(0, 9)
+    } else {
+      return Object.entries(ingredients)
+    }
+  }
+  return []
+}
+
+
+export const RecipeIngredients = ({ ingredients, recipe }) => {
+
+  const [isOpen, toggleList] = React.useState(false)
+
+  useEffect(()=>{
+    toggleList(false);
+  },[recipe]);
 
   return (
     <div className="recipe_ingredients f-grid-cell">
@@ -55,25 +74,27 @@ export const RecipeIngredients = ({ ingredients }) => {
       </h3>
       <ul className="recipe_ingredients-list">
         {
-          ingredients &&
-          Object.entries(ingredients)
-            .slice(0, 9)
-            .map(
-              ([key, value], index) => (<RecipeIngredientsItem
-                key={index}
-                {...value}
-              />),
-            )
+          sliceIngredients(ingredients, !isOpen).map(
+            ([key, value], index) => (<RecipeIngredientsItem
+              key={index}
+              {...value}
+            />),
+          )
         }
 
         {
-          !!(ingredients && Object.entries(ingredients).length > 9) &&
+          !!(ingredients && Object.entries(ingredients).length > 9) && !isOpen &&
           <li>
-            <a className="recipe_ingredients-item recipe_ingredients-item--more"
-               rel="noopener"
-               aria-label={"рецепты на сайте"}
-               target={"_blank"}
-               href="https://www.tveda.ru/recepty/"
+            <a
+              onClick={(event) => {
+                event.preventDefault()
+                toggleList(!isOpen)
+              }}
+              className="recipe_ingredients-item recipe_ingredients-item--more"
+              rel="noopener"
+              aria-label={"рецепты на сайте"}
+              target={"_blank"}
+              href=""
             >
               И еще {Object.entries(ingredients).slice(9).length} ингредиентов
             </a>

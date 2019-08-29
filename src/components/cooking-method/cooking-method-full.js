@@ -23,7 +23,7 @@ export const CookingMethodFull = ({ recipeData }) => {
           </h2>
           <h2 className="title_h2 cooking-method-full_title">
             Посмотреть полный рецепт <br/>
-            {recipeData && recipeData.recipe.name}
+            {recipeData && recipeData.recipe.name} <br/>
             в мобильном приложении
           </h2>
           <StoreButtonGroup

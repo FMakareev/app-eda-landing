@@ -20,7 +20,6 @@ export class RandomRecipe {
       this.newRecipe = this.prevRecipe
       this.prevRecipe = []
     }
-    console.log('newRecipe: ',this.newRecipe)
     return result
   }
 }

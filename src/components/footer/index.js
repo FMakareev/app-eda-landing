@@ -13,7 +13,7 @@ import Config from "../../config"
 export const Footer = () => (<footer className={"footer"}>
   <Container className={'footer_container'}>
     <div className="footer_left">
-      <a href={'https://www.tveda.ru/'} className="footer_logo">
+      <a target={'_blank'} rel="noopener" href={'https://www.tveda.ru/'} className="footer_logo">
         <img src={Logo} alt="logo" className="footer_logo-img"/>
       </a>
       <StoreButtonGroup
@@ -29,9 +29,6 @@ export const Footer = () => (<footer className={"footer"}>
       </a>
       <a target={'_blank'} rel="noopener" aria-label="ссылка на twitter" href={Config.socialLinks.twitter} className="button_primary button_primary--medium">
         <img src={IconTwitter} alt=""/>
-      </a>
-      <a target={'_blank'} rel="noopener" aria-label="ссылка на linkedin" href={Config.socialLinks.linkedin} className="button_primary button_primary--medium">
-        <img src={IconLinkedin} alt=""/>
       </a>
       <a target={'_blank'} rel="noopener" aria-label="ссылка на instagram" href={Config.socialLinks.instagram} className="button_primary button_primary--medium">
         <img src={IconInstagram} alt=""/>

@@ -12,25 +12,43 @@ export const ReviewPopup = ({
                               author,
                               rating,
                               comment,
-                              ModalRef,
                             }) => {
   let autoHeightMax = 400
-try{
-  if (window !== null) {
-    if (
-      window.innerWidth < 768) {
-      autoHeightMax = 360
-    }
-  }
-} catch (e) {
+  try {
+    if (window !== null) {
+      if (window.matchMedia("(orientation: landscape)").matches) {
+        if (window.innerWidth <= 600) {
+          autoHeightMax = 155
+        } else if (window.innerWidth <= 768) {
+          autoHeightMax = 210
+        } else if (window.innerWidth <= 812) {
+          autoHeightMax = 240
+        } else if (
+          window.innerWidth < 768) {
+          autoHeightMax = 360
+        }
+        console.log("(orientation: landscape)", autoHeightMax)
 
-}
+      } else if (window.matchMedia("(orientation: portrait)").matches) {
+        if (
+          window.innerWidth < 768) {
+          autoHeightMax = 360
+        }
+        console.log("(orientation: portrait)", autoHeightMax)
+      }
+    }
+  } catch (e) {
+    console.log(e)
+  }
 
   return (
     <Fragment>
-      <button aria-label="закрыть" onClick={onClose} className={classNames("button review-popup_close-btn", {
-        "review-popup_close-btn--hidden": !open,
-      })}>
+      <button
+        aria-label="закрыть"
+        onClick={onClose}
+        className={classNames("button review-popup_close-btn", {
+          "review-popup_close-btn--hidden": !open,
+        })}>
         <img src={IconClose} alt=""/>
       </button>
       <SkyLightStateless
@@ -46,7 +64,7 @@ try{
         </div>
         <Scrollbars
           autoHeight
-          autoHeightMin={178}
+          autoHeightMin={155}
           autoHeightMax={autoHeightMax}
           hideTracksWhenNotNeeded={true}
         >
