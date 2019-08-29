@@ -16,14 +16,12 @@ export const CookingMethod = ({ recipeData }) => {
       </Parallax>
       <ul className="cooking-method_list">
         {
-          recipeData && recipeData.cooking_process.slice(0,1).map((step, index) => (
+          recipeData && recipeData.cooking_process.slice(0,2).map((step, index) => (
             <CookingMethodStep key={index} index={index + 1} {...step}/>
           ))
         }
       </ul>
-      <div className="cooking-method_more">
 
-      </div>
     </div>
     <CookingMethodFull recipeData={recipeData}/>
   </div>)

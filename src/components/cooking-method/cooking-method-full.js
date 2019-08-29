@@ -13,44 +13,46 @@ export const CookingMethodFull = ({ recipeData }) => {
     </Parallax>
     <Parallax
       disabled={DeviceDetected && !DeviceDetected.desktop()}
-      // y={[15, -30]}
-      y={[0, 0]}
+      y={['-200px', '105px']}
     >
-      <div className="cooking-method-full_wrapper">
-        <div className="cooking-method-full_content">
-          <h2 className="title_h2 cooking-method-full_title cooking-method-full_title--mobile">
-            Читайте полный рецепт в нашем удобном приложении
-          </h2>
-          <h2 className="title_h2 cooking-method-full_title">
-            Посмотреть полный рецепт <br/>
-            {recipeData && recipeData.recipe.name} <br/>
-            в мобильном приложении
-          </h2>
-          <StoreButtonGroup
-            className={"cooking-method-full_btn-group"}
-            buttonClassNames={"button_primary--large"}
-          />
-          <div className="cooking-method-full_website cooking-method-full_website--mobile">
-            Или смотрите рецепт
-            на <a rel="noopener"
-                  aria-label={"рецепты на сайте"}
-                  target={"_blank"}
-                  href="https://www.tveda.ru/recepty/"
-                  className={"button_link button_link--white cooking-method-full_website-link"}
-          >
-            сайте
-          </a>
-          </div>
-          <div className="cooking-method-full_website">
-            Или перейти на страницу рецепта на <a
-            rel="noopener"
-            aria-label={"рецепты на сайте"}
-            target={"_blank"}
-            href="https://www.tveda.ru/recepty/"
-            className={"button_link button_link--white cooking-method-full_website-link"}
-          >
-            сайте
-          </a>
+      <div className="cooking-method-full_swing-anim" style={{position: 'relative'}}>
+        <div className="cooking-method_more"/>
+        <div className="cooking-method-full_wrapper">
+          <div className="cooking-method-full_content">
+            <h2 className="title_h2 cooking-method-full_title cooking-method-full_title--mobile">
+              Читайте полный рецепт в нашем удобном приложении
+            </h2>
+            <h2 className="title_h2 cooking-method-full_title">
+              Посмотреть полный рецепт <br/>
+              {recipeData && recipeData.recipe.name} <br/>
+              в мобильном приложении
+            </h2>
+            <StoreButtonGroup
+              className={"cooking-method-full_btn-group"}
+              buttonClassNames={"button_primary--large"}
+            />
+            <div className="cooking-method-full_website cooking-method-full_website--mobile">
+              Или смотрите рецепт
+              на <a rel="noopener"
+                    aria-label={"рецепты на сайте"}
+                    target={"_blank"}
+                    href="https://www.tveda.ru/recepty/"
+                    className={"button_link button_link--white cooking-method-full_website-link"}
+            >
+              сайте
+            </a>
+            </div>
+            <div className="cooking-method-full_website">
+              Или перейти на страницу рецепта на <a
+              rel="noopener"
+              aria-label={"рецепты на сайте"}
+              target={"_blank"}
+              href="https://www.tveda.ru/recepty/"
+              className={"button_link button_link--white cooking-method-full_website-link"}
+            >
+              сайте
+            </a>
+            </div>
           </div>
         </div>
       </div>
