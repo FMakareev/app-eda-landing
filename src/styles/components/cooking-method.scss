@@ -9,12 +9,13 @@
   }
 
   &_list {
+    position: relative;
     padding-bottom: 1px;
   }
 
   &_more {
     position: absolute;
-    bottom: 0;
+    top: -110px;
     left: 0;
     right: 0;
     height: 125px;
@@ -22,12 +23,18 @@
   }
 
   &_step {
-    margin-bottom: 35px;
+    margin-bottom: 70px;
     max-width: 630px;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     flex-wrap: wrap;
+
+    &:last-child{
+      position: absolute;
+      top: calc(100% - 35px);
+      left: 0;
+    }
 
     @media(min-width: 768px) {
       flex-wrap: nowrap;
@@ -125,8 +132,15 @@
     position: relative;
   }
 
+  &_swing-anim {
+    @media (min-width: 768px) {
+      animation: swing 2s infinite ease-in-out;
+    }
+  }
+
   &_wrapper {
     position: relative;
+    z-index: 5;
     overflow: hidden;
     background-color: #FA7109;
     border-radius: 20px;
@@ -134,9 +148,9 @@
     margin-bottom: 80px;
     //box-shadow: 0 0 40px #F47B20, 0 20px 20px #FFFFFF;
     @media (min-width: 768px) {
+      margin-bottom: 160px;
       padding: 70px 70px;
       box-shadow: none;
-      animation: swing 2s infinite ease-in-out;
     }
 
     &:after {
