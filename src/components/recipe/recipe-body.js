@@ -35,6 +35,23 @@ const RecipeBody = ({ recipeData }) => {
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
           />
+          <div
+            onClick={(event) => {
+              if (recipeData && recipeData.recipe.video) {
+                event.preventDefault()
+                toggleVideo(false)
+              }
+            }}
+            style={{
+              width: "100%",
+              top: "70px",
+              bottom: "50px",
+              position: "absolute",
+              zIndex: 1,
+              backgroundColor: "transparent",
+            }}>
+
+          </div>
         </div>)
       }
 
