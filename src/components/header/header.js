@@ -23,7 +23,7 @@ export const Header = () => (<header className={"header"}>
       />
     </div>
     <h1 className={"title_h1 header_title"}>
-      Мобильное приложение телеканала "Еда"
+      Мобильное приложение телеканала «Еда»
     </h1>
   </Container>
 

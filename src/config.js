@@ -4,11 +4,14 @@ export const Config = {
     android: "https://play.google.com/store/apps/details?id=ru.harbordigital.edatvapp",
   },
   socialLinks: {
-    facebook: "https://www.facebook.com/tveda.vidorecepty",
-    twitter: "https://twitter.com/telekanaleda",
-    instagram: "https://www.instagram.com/edatelevision/",
-    youtube: "https://www.youtube.com/user/EdaHDTelevision",
-    linkedin: "",
+    vk: "https://vk.com/telekanaleda_recepty",// +
+    ok: "https://ok.ru/group/53290253221987/",// +
+    zen: "https://zen.yandex.ru/media/tveda",// -
+    facebook: "https://www.facebook.com/tveda.vidorecepty",// +
+    twitter: "https://twitter.com/telekanaleda",// +
+    instagram: "https://www.instagram.com/edatelevision/",// +
+    youtube: "https://www.youtube.com/user/EdaHDTelevision", // +
+    telegram: "https://t.me/tveda", // +
   },
   endpoints: {
     getRecipe: "http://api2.tveda.ru/a1/?action=get_recipe&id=",
@@ -16,16 +19,19 @@ export const Config = {
 
   recipeList: [
     944669,
-    944670,
+    // 944670,
+    1029781,
+    1006121,
     944671,
-    944672,
+    // 944672,
     944674,
     944675,
     944676,
     944677,
     944678,
     1029831,
-    129158,
+    1025793,
+    // 129158,
   ],
 
 }
