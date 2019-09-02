@@ -85,6 +85,7 @@
 
     .slick-list {
       overflow: inherit;
+      overflow-y: hidden;
       height: 316px;
       @media(min-width: 768px) {
         height: 255px;
