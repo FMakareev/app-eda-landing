@@ -60,9 +60,14 @@
   &_social-group {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    @media(min-width: 768px){
+      flex-wrap: nowrap;
+    }
 
     .button_primary {
       margin-right: 12px;
+      margin-bottom: 12px;
       width: 40px;
       display: flex;
       justify-content: center;
