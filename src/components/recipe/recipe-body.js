@@ -5,7 +5,7 @@ import { recipeDataPropTypes } from "../../interfaces"
 import { CyrillicToTransliteration } from "../../utils/translit"
 
 
-const CreateLink = (recipeData) => {
+export const CreateRecipeLink = (recipeData) => {
   if (recipeData) {
     return `https://www.tveda.ru/recepty/${CyrillicToTransliteration(recipeData.recipe.name)}?id=${recipeData.recipe.id}`
   } else {
@@ -30,7 +30,6 @@ const RecipeBody = ({ recipeData }) => {
             }}
             className="recipe_preview-img"
             src={`https://www.youtube.com/embed/${recipeData && recipeData.recipe.video}?autoplay=1`}
-            // src={`https://www.youtube.com/embed/gpqp58kJ1I8?autoplay=0`}
             frameBorder="0"
             allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
@@ -67,7 +66,7 @@ const RecipeBody = ({ recipeData }) => {
           rel="noopener"
           aria-label={"рецепты на сайте"}
           target={"_blank"}
-          href={CreateLink(recipeData)}
+          href={CreateRecipeLink(recipeData)}
           className="recipe_preview f-grid-cell"
         >
           <img
