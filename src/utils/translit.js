@@ -33,6 +33,7 @@ const dict = {
   "ю":"yu",
   "я":"ya",
   " ":"-",
+  "-":"-",
 }
 
 
@@ -41,6 +42,7 @@ const dict = {
 export function CyrillicToTransliteration(str) {
  return str
     .toLowerCase()
+    .trim()
     .split("")
     .map(w => {
       if (dict.hasOwnProperty(w)) {
