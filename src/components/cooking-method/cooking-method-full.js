@@ -4,6 +4,7 @@ import { Parallax } from "react-scroll-parallax"
 import { DeviceDetected } from "../../pages/index"
 import mushroom from "../../../static/images/1-mushroom.jpg"
 import StoreButtonGroup from "../storeButtonGroup"
+import { CreateRecipeLink } from "../recipe/recipe-body"
 
 
 export const CookingMethodFull = ({ recipeData }) => {
@@ -36,7 +37,7 @@ export const CookingMethodFull = ({ recipeData }) => {
               на <a rel="noopener"
                     aria-label={"рецепты на сайте"}
                     target={"_blank"}
-                    href="https://www.tveda.ru/recepty/"
+                    href={CreateRecipeLink(recipeData)}
                     className={"button_link button_link--white cooking-method-full_website-link"}
             >
               сайте
@@ -47,7 +48,7 @@ export const CookingMethodFull = ({ recipeData }) => {
               rel="noopener"
               aria-label={"рецепты на сайте"}
               target={"_blank"}
-              href="https://www.tveda.ru/recepty/"
+              href={CreateRecipeLink(recipeData)}
               className={"button_link button_link--white cooking-method-full_website-link"}
             >
               сайте
