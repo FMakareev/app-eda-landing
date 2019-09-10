@@ -232,6 +232,7 @@
     display: block;
     object-fit: contain;
     width: 100%;
+    z-index: 4;
 
     @media(min-width: 768px) {
       width: auto;
@@ -254,6 +255,7 @@
     background-color: transparent;
     border: none;
     cursor: pointer;
+    z-index: 5;
   }
 
   &_ingredients {
@@ -308,7 +310,13 @@
   }
 
 }
-
+iframe.recipe_preview-img {
+  z-index: 3;
+}
 iframe.recipe_preview-img + button {
   display: none;
+}
+
+iframe.recipe_preview-img + .recipe_preview-img {
+  z-index: -1;
 }
