@@ -13,6 +13,110 @@ export const CreateRecipeLink = (recipeData) => {
   }
 }
 
+
+const YoutubeVideo = ({ recipeData, toggleVideo, playVideo }) => {
+  const [YT, setYT] = React.useState({
+    player: null,
+    state: null,
+    currentTime: 0,
+    onPlaying: null,
+    prevElem: null,
+  })
+
+  useEffect(() => {
+    if (YT.player && YT.prevElem) {
+      YT.player.pauseVideo()
+      YT.player.clearVideo()
+      YT.prevElem.setAttribute("src", recipeData &&
+        Array.isArray(recipeData.cooking_process) &&
+        recipeData.cooking_process[recipeData.cooking_process.length - 1].image)
+      document.getElementById("yt-video").replaceWith(YT.prevElem)
+      setYT({
+        ...YT,
+        currentTime: 0,
+        state: null,
+      })
+    }
+  }, [recipeData])
+
+  return (<a
+    onClick={(event) => {
+      if (recipeData && recipeData.recipe.video) {
+        event.preventDefault()
+        let prevElem = document.getElementById("yt-video").cloneNode(true)
+
+        let player = new window.YT.Player("yt-video", {
+          videoId: recipeData && recipeData.recipe.video,
+          events: {
+            "onReady": () => {
+              player.playVideo()
+              if(YT.currentTime > 0){
+                player.seekTo(YT.currentTime)
+              }
+            },
+          },
+        })
+        setYT({
+          ...YT,
+          state: "playing",
+          prevElem,
+          player,
+        })
+      }
+    }}
+    rel="noopener"
+    aria-label={"рецепты на сайте"}
+    target={"_blank"}
+    href={CreateRecipeLink(recipeData)}
+    className="recipe_preview f-grid-cell">
+    <img
+      id={"yt-video"}
+      className="recipe_preview-img"
+      src={recipeData &&
+      Array.isArray(recipeData.cooking_process) &&
+      recipeData.cooking_process[recipeData.cooking_process.length - 1].image}
+      alt="preview"
+    />
+    <button
+      id={"yt-video-preview-link"}
+      aria-label="открыть рецепт"
+      className="recipe_preview-link"
+    >
+      <img src={IconPlay} alt=""/>
+    </button>
+    <div
+      onClick={(event) => {
+        if (recipeData && recipeData.recipe.video) {
+          event.preventDefault()
+          event.stopPropagation()
+          if(YT.player){
+            let time = YT.player.getCurrentTime()
+            YT.player.pauseVideo();
+            YT.player.clearVideo();
+            setYT({
+              ...YT,
+              state: null,
+              currentTime: time,
+            })
+          }
+          document.getElementById("yt-video").replaceWith(YT.prevElem)
+
+        }
+      }}
+      style={{
+        display: YT.state === "playing" ? "block" : "none",
+        width: "100%",
+        top: "70px",
+        bottom: "50px",
+        position: "absolute",
+        zIndex: 1,
+        backgroundColor: "transparent",
+      }}/>
+
+  </a>)
+}
+
+
 const RecipeBody = ({ recipeData }) => {
   const [playVideo, toggleVideo] = React.useState(false)
 
@@ -22,66 +126,9 @@ const RecipeBody = ({ recipeData }) => {
 
   return (
     <div className="recipe_body f-grid">
-      {
-        playVideo && (<div className="recipe_preview f-grid-cell">
-          <iframe
-            style={{
-              width: "100%",
-            }}
-            className="recipe_preview-img"
-            src={`https://www.youtube.com/embed/${recipeData && recipeData.recipe.video}?autoplay=1`}
-            frameBorder="0"
-            allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-          />
-          <div
-            onClick={(event) => {
-              if (recipeData && recipeData.recipe.video) {
-                event.preventDefault()
-                toggleVideo(false)
-              }
-            }}
-            style={{
-              width: "100%",
-              top: "70px",
-              bottom: "50px",
-              position: "absolute",
-              zIndex: 1,
-              backgroundColor: "transparent",
-            }}>
 
-          </div>
-        </div>)
-      }
 
-      {
-        !playVideo &&
-        recipeData && (<a
-          onClick={(event) => {
-            if (recipeData && recipeData.recipe.video) {
-              event.preventDefault()
-              toggleVideo(true)
-            }
-          }}
-          rel="noopener"
-          aria-label={"рецепты на сайте"}
-          target={"_blank"}
-          href={CreateRecipeLink(recipeData)}
-          className="recipe_preview f-grid-cell"
-        >
-          <img
-            className="recipe_preview-img"
-            src={recipeData &&
-            Array.isArray(recipeData.cooking_process) &&
-            recipeData.cooking_process[recipeData.cooking_process.length - 1].image}
-            alt="preview"
-          />
-          <button aria-label="открыть рецепт" className="recipe_preview-link">
-            <img src={IconPlay} alt=""/>
-          </button>
-        </a>)
-      }
-
+      <YoutubeVideo playVideo={playVideo} toggleVideo={toggleVideo} recipeData={recipeData}/>
       <RecipeIngredients
 
         recipe={recipeData && recipeData.recipe}

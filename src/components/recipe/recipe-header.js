@@ -18,13 +18,16 @@ const RecipeHeader = (props) => {
 
     <div className="recipe_info">
       <div className="recipe_author">
-        <div className="recipe_author-img-wrapper">
-          <img
-            className="recipe_author-img"
-            src={recipeData && recipeData.chief && recipeData.chief.photo_list}
-            alt="фото шеф повора"
-          />
-        </div>
+        {
+          recipeData && recipeData.chief && recipeData.chief.photo_list &&
+          <div className="recipe_author-img-wrapper">
+            <img
+              className="recipe_author-img"
+              src={recipeData && recipeData.chief && recipeData.chief.photo_list}
+              alt="фото шеф повора"
+            />
+          </div>
+        }
         <div className="recipe_author-name">
           {recipeData && recipeData.chief && recipeData.chief.name}
         </div>
