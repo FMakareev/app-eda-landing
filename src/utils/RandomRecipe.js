@@ -1,5 +1,3 @@
-
-
 export class RandomRecipe {
   prevRecipe = []
   newRecipe = []
@@ -22,6 +20,13 @@ export class RandomRecipe {
     }
     return result
   }
+
+  set recipe(id) {
+    if (!this.newRecipe.find(item => item === id)) {
+      this.newRecipe.push(id)
+    }
+  }
+
 }
 
 

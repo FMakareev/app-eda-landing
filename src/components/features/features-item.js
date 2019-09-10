@@ -7,7 +7,7 @@ const FeaturesItem = ({title,content,image,id, className, contentChildren}) => {
   return (
     <div id={id} className={classNames("features_container","features_animation")}>
       <div className="features_picture">
-        <img src={iphone} alt={iphone} className="features_picture-img"/>
+        <img src={image.url} alt={image.alt} className="features_picture-img"/>
       </div>
       <div className="features_content">
         <h3 className="title_h3 features_content-title">

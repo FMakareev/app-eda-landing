@@ -1,6 +1,6 @@
 import React, { Fragment } from "react"
 import { ParallaxProvider } from "react-scroll-parallax"
-import { useAxiosRequest } from 'use-axios-request';
+import { useAxiosRequest } from "use-axios-request"
 
 import Recipe from "../components/recipe"
 import Header from "../components/header/header"
@@ -17,16 +17,19 @@ import { RandomRecipe } from "../utils/RandomRecipe"
 export const DeviceDetected = typeof window === "object" ? require("current-device").default : null
 
 
+export const randomRecipe = new RandomRecipe(Config.recipeList)
+
+let firstID = randomRecipe.getRandomId()
+
+export const HomePage = ({ location }) => {
+  console.log("HomePage: ", location)
+  console.log("HomePage: ", location.search.replace("?id=", ""))
 
 
-
-
-
-
-export const randomRecipe = new RandomRecipe(Config.recipeList);
-
-const firstID = randomRecipe.getRandomId();
-export default () => {
+  if (location.search) {
+    firstID = location.search.replace("?id=", "")
+    randomRecipe.recipe = firstID;
+  }
   /**
    * config: string
    * data: any
@@ -36,7 +39,7 @@ export default () => {
    * requestId: int
    * update: ƒ (config)
    * */
-  const {data, refresh, update} = useAxiosRequest(`${Config.endpoints.getRecipe}${firstID}`, {})
+  const { data, update } = useAxiosRequest(`${Config.endpoints.getRecipe}${firstID}`, {})
 
   return (
     <Fragment>
@@ -63,3 +66,6 @@ export default () => {
     </Fragment>
   )
 }
+
+
+export default HomePage

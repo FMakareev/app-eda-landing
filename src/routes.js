@@ -4,4 +4,8 @@ module.exports = [
     path: '/',
     component: path.resolve(`src/pages/index.js`)
   },
+  {
+    path: '/recepty/',
+    component: path.resolve(`src/pages/index.js`)
+  },
 ];
