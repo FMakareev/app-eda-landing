@@ -23,7 +23,7 @@
     "gatsby-plugin-react-helmet": "^3.1.4",
     "gatsby-plugin-routes": "^1.0.0",
     "gatsby-plugin-sass": "^2.1.6",
-    "node-sass": "^4.12.0",
+    "node-sass": "^7.0.0",
     "normalize-scss": "^7.0.1",
     "preact": "^10.0.0-beta.3",
     "prop-types": "^15.7.2",
