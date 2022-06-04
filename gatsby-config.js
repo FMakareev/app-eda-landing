@@ -10,6 +10,7 @@ module.exports = {
       resolve: "gatsby-plugin-sass",
       options: {
         useResolveUrlLoader: true,
+        implementation: require("dart-sass"),
       },
     },
     {

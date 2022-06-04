@@ -28,15 +28,15 @@ export const Footer = () => (<footer className={"footer"}>
       <a target={'_blank'} rel="noopener" aria-label="ссылка на вконтакте" href={Config.socialLinks.vk} className="button_primary button_primary--medium">
         <img src={IconVK} alt=""/>
       </a>
-      <a target={'_blank'} rel="noopener" aria-label="ссылка на facebook" href={Config.socialLinks.facebook} className="button_primary button_primary--medium">
-        <img src={IconFacebook} alt=""/>
-      </a>
+      {/*<a target={'_blank'} rel="noopener" aria-label="ссылка на facebook" href={Config.socialLinks.facebook} className="button_primary button_primary--medium">*/}
+      {/*  <img src={IconFacebook} alt=""/>*/}
+      {/*</a>*/}
       <a target={'_blank'} rel="noopener" aria-label="ссылка на вконтакте" href={Config.socialLinks.ok} className="button_primary button_primary--medium">
         <img src={IconOdnoklassniki} alt=""/>
       </a>
-      <a target={'_blank'} rel="noopener" aria-label="ссылка на instagram" href={Config.socialLinks.instagram} className="button_primary button_primary--medium">
-        <img src={IconInstagram} alt=""/>
-      </a>
+      {/*<a target={'_blank'} rel="noopener" aria-label="ссылка на instagram" href={Config.socialLinks.instagram} className="button_primary button_primary--medium">*/}
+      {/*  <img src={IconInstagram} alt=""/>*/}
+      {/*</a>*/}
       <a target={'_blank'} rel="noopener" aria-label="ссылка на yandex zen" href={Config.socialLinks.zen} className="button_primary button_primary--medium">
         <svg width="11px" height="20px"  viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M7.64748 5.16778L1.88285 10.1793L0.402588 8.47663L6.1673 3.46509L7.64748 5.16778Z" fill="#FFF"/>

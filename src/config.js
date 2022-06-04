@@ -6,15 +6,15 @@ export const Config = {
   socialLinks: {
     vk: "https://vk.com/telekanaleda_recepty",// +
     ok: "https://ok.ru/group/53290253221987/",// +
-    zen: "https://zen.yandex.ru/media/tveda",// -
-    facebook: "https://www.facebook.com/tveda.vidorecepty",// +
-    twitter: "https://twitter.com/telekanaleda",// +
-    instagram: "https://www.instagram.com/edatelevision/",// +
+    zen: "https://zen.yandex.ru/edatv",// -
+    // facebook: "https://www.facebook.com/tveda.vidorecepty",// +
+    // twitter: "https://twitter.com/telekanaleda",// +
+    // instagram: "https://www.instagram.com/edatelevision/",// +
     youtube: "https://www.youtube.com/user/EdaHDTelevision", // +
     telegram: "https://t.me/tveda", // +
   },
   endpoints: {
-    getRecipe: "http://api2.tveda.ru/a1/?action=get_recipe&id=",
+    getRecipe: "https://api2.tveda.ru/a1/?action=get_recipe&id=",
   },
 
   recipeList: [
